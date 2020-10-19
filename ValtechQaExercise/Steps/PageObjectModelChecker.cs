@@ -51,7 +51,8 @@ namespace ValtechQaExercise.Steps
 
         private static void CheckPartnersPage(Menu menu, PartnersListPage partnersListPage)
         {
-            menu.NavigateToOurPartnersPage();
+            menu.NavigateToPartnersMenu();
+            menu.NavigateToOurPartners();
 
             var industryPartners = partnersListPage.GetAllIndustryPartners();
 
