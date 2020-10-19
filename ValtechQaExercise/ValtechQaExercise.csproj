@@ -5,6 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Drivers\msedgedriver.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Drivers\msedgedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="5.10.3" />
     <PackageReference Include="Microsoft.Edge.SeleniumTools" Version="3.141.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
@@ -30,6 +40,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Steps\PartnerStepDefinitions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Steps\OfficesStepDefinitions.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

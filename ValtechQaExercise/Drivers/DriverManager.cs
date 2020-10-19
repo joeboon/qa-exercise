@@ -43,13 +43,15 @@ namespace ValtechQaExercise.Drivers
         /// <returns></returns>
         private static IWebDriver CreateEdgeDriver()
         {
+            string edgeDriverDirectory = "Drivers";
+
             EdgeOptions edgeOptions = new EdgeOptions()
             {
                 UnhandledPromptBehavior = UnhandledPromptBehavior.DismissAndNotify,
                 UseChromium = true,
             };
 
-            return new EdgeDriver(edgeOptions);
+            return new EdgeDriver(edgeDriverDirectory, edgeOptions);
         }
 
         /// <summary>

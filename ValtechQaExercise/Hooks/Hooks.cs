@@ -18,16 +18,31 @@ namespace ValtechQaExercise.Hooks
             _scenarioContext = scenarioContext;
         }
 
-        [BeforeScenario]
+        [BeforeScenario("chrome")]
         public void BeforeScenario()
         {
-            // TODO Get driver type from the environment for CI integration
             _driver = DriverManager.CreateDriver(DriverType.Chrome);
             _scenarioContext["driver"] = _driver;
         }
 
-        [AfterScenario]
+        [AfterScenario("chrome")]
         public void AfterScenario()
+        {
+            _scenarioContext["driver"] = null;
+            _driver?.Dispose();
+            _driver = null;
+        }
+
+        [BeforeScenario("nodriver")]
+        public void BeforeScenarioNoDriver()
+        {
+            _scenarioContext["driver"] = null;
+            _driver?.Dispose();
+            _driver = null;
+        }
+
+        [AfterScenario("nodriver")]
+        public void AfterScenarioNoDriver()
         {
             _scenarioContext["driver"] = null;
             _driver?.Dispose();

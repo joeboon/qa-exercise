@@ -24,8 +24,8 @@ namespace ValtechQaExercise.Steps
         [Then("tests can visit all pages on each browser, so we fail fast if the UI has changed and the automated test page object models need updating")]
         public void ThenAllPageObjectElementsCanBeFoundOnAllBrowsers()
         {
-            CheckAllPages(DriverType.Firefox);
             CheckAllPages(DriverType.Edge);
+            CheckAllPages(DriverType.Firefox);
             CheckAllPages(DriverType.Chrome);
         }
 
