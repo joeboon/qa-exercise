@@ -105,12 +105,14 @@ namespace ValtechQaExercise.Features
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Capture a list of all partners (exercise 2)")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ValtechQAExercise")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("chrome")]
         public virtual void CaptureAListOfAllPartnersExercise2()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "chrome"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Capture a list of all partners (exercise 2)", null, tagsOfScenario, argumentsOfScenario);
-#line 10
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -133,14 +135,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 11
+#line 12
  testRunner.Given("The Partners section is displaying", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 12
+#line 13
  testRunner.When("I click on \"Our Partners\" button on the Partners page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 14
  testRunner.Then("the list of partners across industries can be captured", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify all offices in the UK (exercise 3)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ValtechQAExercise")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("chrome")]
+        public virtual void VerifyAllOfficesInTheUKExercise3()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "chrome"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify all offices in the UK (exercise 3)", null, tagsOfScenario, argumentsOfScenario);
+#line 17
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 7
+this.FeatureBackground();
+#line hidden
+#line 18
+  testRunner.Given("I am viewing all offices in United Kingdom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 19
+ testRunner.When("I list all the offices in United Kingdom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Office"});
+                table1.AddRow(new string[] {
+                            "Valtech Bristol, Unit 18, Keynsham Rd, Willsbridge, Bristol BS30 6EL, +44 (0) 20 " +
+                                "7014 0800, info@valtech.co.uk"});
+                table1.AddRow(new string[] {
+                            "Valtech London, 46 Colebrooke Row, London N1 8AF, +44 (0) 20 7014 0800, info@valt" +
+                                "ech.co.uk"});
+                table1.AddRow(new string[] {
+                            "Valtech Manchester, Basil Chambers, 65 High Street, Manchester M4 1FS, +44 (0) 20" +
+                                " 7014 0800, info@valtech.co.uk"});
+#line 20
+ testRunner.Then("the list of offices is:", ((string)(null)), table1, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
