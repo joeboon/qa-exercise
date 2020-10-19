@@ -10,6 +10,7 @@ namespace ValtechQaExercise.Pages.Common
         private By MenuIconLocator => By.CssSelector("button.icon-menu");
         private By MenuPanelLocator => By.CssSelector(".site-nav__menu");
         private By PartnersMenuItemLocator => By.XPath(".//button[contains(text(),'Partners')]");
+        private By PartnersHeaderLocator => By.XPath(".//h3[contains(text(),'Partners')]");
         private By OurPartnersLinksLocator => By.CssSelector("a[data-om-navcta='Partners']");
 
         public IWebElement MenuIcon => _driver.FindElement(MenuIconLocator);
@@ -30,11 +31,20 @@ namespace ValtechQaExercise.Pages.Common
             WaitForElementToBeVisible(MenuPanelLocator);
         }
 
-        public void NavigateToOurPartnersPage()
+        public void NavigateToPartnersMenu()
         {
             OpenMenuPanel();
             PartnersMenuItem.Click();
+        }
+
+        public void NavigateToOurPartners()
+        {
             OurPartnersFirstLink.Click();
+        }
+
+        public bool IsPartnersHeaderVisible()
+        {
+            return WaitForIsElementVisible(PartnersHeaderLocator);
         }
     }
 }
