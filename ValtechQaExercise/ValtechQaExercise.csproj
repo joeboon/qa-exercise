@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Drivers\msedgedriver.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Drivers\msedgedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="Microsoft.Edge.SeleniumTools" Version="3.141.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="86.0.4240.2200" />
+
+    
+
+    
+
+    
+
+    
+    <PackageReference Include="SpecFlow.MsTest" Version="3.4.14" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Hooks\Hooks.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Steps\PartnerStepDefinitions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Steps\OfficesStepDefinitions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>
